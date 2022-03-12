@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Abdellatif Osama" />
+    <meta name="description" content="Weather App" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="html,css,js,ajax,weather,bootstrap" />
+    <link rel="icon" href="images/fav-icon.png">
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/main.css">
+    <title>Weather App</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light navbar-background pt-4">
+            <div class="container">
+                <div>
+                    <img src="images/head-icon.png" alt="navbar-brand-img" class="navbar-brand-img me-1">
+                    <a class="navbar-brand text-white navbar-brand-font" href="#">Weather</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item me-3">
+                            <a class="nav-link active text-white nav-link-font nav-link-active position-relative"
+                                aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link active text-white nav-link-font position-relative" aria-current="page"
+                                href="#about">About</a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link active text-white nav-link-font position-relative" aria-current="page"
+                                href="#search-input">Search</a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link active text-white nav-link-font position-relative" aria-current="page"
+                                href="#mobile-app">Mobile
+                                App</a>
+                        </li>
+                        <li class="nav-item me-4">
+                            <a class="nav-link active text-white nav-link-font position-relative" aria-current="page"
+                                href="#subscribe">Subscribe</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div style="height: 100px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M-2.25,65.99 C225.24,-101.00 300.24,149.00 500.00,49.99 L500.00,0.00 L0.00,0.00 Z"
+                    style="stroke: none; fill: #37aec3"></path>
+            </svg></div>
+    </header>
+    <!-- About section -->
+    <section class="container p-3" id="about">
+        <div class="row justify-content-center mt-2">
+            <div class="col-lg-6 mt-4">
+                <div>
+                    <h2 class="about-heading mb-4">Weather App</h2>
+                    <p class="about-text">Having an up to date information about the weather helps us to take
+                        well-read decisions. These
+                        weather apps constantly update the forecasts for a day or hour or sometimes for even a minute.
+                        These can be simply termed as the compact weather devices, as they do not only tell about the
+                        temperature of that specific region instead they can describe the accurate time of the sunrise
+                        and sunset, the time of the rainfall, humidity levels, etc.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 ms-lg-5">
+                <div>
+                    <img src="images/raining-animate-1.svg" alt="animated-raining">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Search by city -->
+    <div class="d-flex justify-content-center my-4 pt-4">
+        <input type="search" id="search-input" class="form-control w-25 rounded-pill search-input"
+            placeholder=" Search by City">
+    </div>
+    <!-- Main section that display weather-->
+    <main class="container my-5 p-2">
+        <div class="row justify-content-center">
+            <!-- Current weather -->
+            <div class="col-lg-4 mb-4">
+                <div class="weather-card">
+                    <div class="weather-header d-flex justify-content-between align-items-center py-2 px-3">
+                        <p id="current-day"></p>
+                        <p id="current-date"></p>
+                    </div>
+                    <div class="p-4 text-white">
+                        <div class="mt-3">
+                            <p id="city"></p>
+                        </div>
+                        <div class="mt-2 d-flex justify-content-between align-items-center">
+                            <p id="temp"></p>
+                            <img src="" alt="current-day-icon" class="img-fluid" id="condition-icon">
+                        </div>
+                        <div class="mb-2">
+                            <p id="condition"></p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-umbrella pe-2"></i>
+                            <span id="humidity"></span>
+                            <i class="fa-solid fa-wind pe-2 ps-3"></i>
+                            <span id="wind-speed"></span>
+                            <i class="fa-regular fa-compass pe-2 ps-3"></i>
+                            <span id="wind_dir"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Next Day Weather -->
+            <div class="col-lg-4 mb-4">
+                <div class="weather-next-day-card h-100">
+                    <div class="weather-header d-flex justify-content-between align-items-center py-2 px-3">
+                        <p class="next-day"></p>
+                        <p class="next-date"></p>
+                    </div>
+                    <div class="text-center text-white pt-4">
+                        <img src="" alt="next-day-icon" width="90" class="next-days-display">
+                        <h2 class="next-day-max-temp d-block"></h2>
+                        <h2 class="next-day-min-temp d-block"></h2>
+                        <span class="condition"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Day after Tomorrow-->
+            <div class="col-lg-4 mb-4">
+                <div class="weather-next-day-card h-100">
+                    <div class="weather-header d-flex justify-content-between align-items-center py-2 px-3">
+                        <p class="next-day"></p>
+                        <p class="next-date"></p>
+                    </div>
+                    <div class="text-center text-white pt-4">
+                        <img src="" alt="day after tomorrow icon" width="90" class="next-days-display">
+                        <h2 class="next-day-max-temp d-block"></h2>
+                        <h2 class="next-day-min-temp d-block"></h2>
+                        <span class="condition"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Download section-->
+    <div class="container p-2" id="mobile-app">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-3 me-5">
+                <div>
+                    <img src="images/download.png" alt="download-img" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="text-center">
+                    <h2 class="mobile-app-head mb-4">Mobile App</h2>
+                    <p class="mobile-app-text mb-4">This weather app is one of best free weather apps with full
+                        features:
+                        Local weather weather map (weather map service) and weather widgets.</p>
+                    <div class="mt-4">
+                        <button class="btn download-btn text-white m-2">Download Android</button>
+                        <button class="btn download-btn text-white m-2">Download IOS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Subscribe section -->
+    <div class="container my-5">
+        <div class="row justify-content-center align-items-center pt-4">
+            <div class="col-lg-6 text-center">
+                <h2 class="mobile-app-head mb-2">Subscribe</h2>
+                <p class="mobile-app-text mb-4">Get daily weather updates, quotes & more..</p>
+                <div class="e-mail-input text-start rounded-pill ps-3 py-1">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="email-subscribe" placeholder="Enter your email to subsribe.."
+                        class="border-0">
+                </div>
+                <p class="invalid mt-3 mb-0 d-none">Invalid Email Address!</p>
+                <button id="subscribe" type="button" class="btn download-btn text-white mt-4" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">Subscribe</button>
+            </div>
+            <div class="col-lg-3 ms-5">
+                <img src="images/subscribe.png" alt="subscribe-img" class="img-fluid">
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body text-center">
+                            <img src="images/subscribe.png" alt="Subscribe img" class="img-fluid w-75">
+                            <h5>Congratulations!</h5>
+                            <p>You can now check your email to verify your account</p>
+                            <button type="button" class="close-modal-btn border-0 text-white"
+                                data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer text-white text-center py-2">
+        <p>Copyright © 2021 Designed by Abdellatif Osama. All rights reserved</p>
+        <div class="footer-icon">
+            <i class="fa-brands fa-facebook me-1"></i>
+            <i class="fa-brands fa-twitter me-1"></i>
+            <i class="fa-brands fa-pinterest me-1"></i>
+            <i class="fa-brands fa-google-plus-g me-1"></i>
+        </div>
+    </footer>
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script type="module" src="JS/main.js"></script>
+</body>
+
+</html>
